@@ -1,11 +1,60 @@
-.container {
-  height:100%;
+header {
+  height: 100%;
 }
 
-div {
-  border: 2px solid black;
-  height: 200px;
+.gameName {
+  height: 100%;
+  border: 2px solid red;
 }
-.redCar {
+
+h1, .instructions {
+  font-family: 'Fresca', sans-serif;
+  font-size: 500%;
+  text-align: center;
+}
+
+.instructions {
+  font-size:200%
+}
+
+.container {
+  height: 200px;
+  width: 99%;
+}
+
+.track {
+  position: relative;
+  height: 54px;
+  width: 100%;
+  border: 2px solid black;
+}
+
+
+.racerOne {
   background-color: red;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  position: absolute;
+  left:0px;
+}
+
+
+.racerTwo {
+  background-color: blue;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  position: absolute;
+  left:0px;
+}
+
+
+.racerThree {
+  background-color: green;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  position: absolute;
+  left:0px;
 }
