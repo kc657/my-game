@@ -25,7 +25,7 @@ h1, .instructions {
 .track {
   position: relative;
   height: 54px;
-  width: 100%;
+  width: 101%;
   border: 2px solid black;
 }
 

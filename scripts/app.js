@@ -3,8 +3,9 @@ console.log('sanity check')
 // listener for "z" keypress
 
 $(document).ready(function () {
-  var firstPlace = ''
-  var secondPlace = ''
+  var firstPlace = null
+  var secondPlace = null
+  var gameOver = false
   var racerOnePosition = 0
   var racerTwoPosition = 0
   var racerThreePosition = 0
@@ -14,8 +15,6 @@ $(document).ready(function () {
   var width = $(window).width()
   var cssWidth = $('.track').width()
 
-  console.log(cssWidth)
-
   $(document).keydown(function (userInput) {
     if (userInput.keyCode === 90) {
       if (racerOnePosition <= cssWidth - (width - cssWidth)) {
@@ -23,7 +22,17 @@ $(document).ready(function () {
         console.log('racer 1 is ', racerOne)
         racerOne.css({left: racerOnePosition})
       } else {
-        console.log('Game Over')
+        if (firstPlace === null) {
+          firstPlace = 'Player One'
+          $('.results').append('<p>Player One Finished First and Lost!<p>')
+          racerOne.off
+        } else if (secondPlace === null && firstPlace !== 'Player One') {
+          secondPlace = 'Player One'
+          $('.results').append('<p>Player One Finished Second and Won!<p>')
+        } else if (firstPlace && secondPlace !== null) {
+          gameOver = true
+          $('.results').append(`<p>Game has ended</p>`)
+        }
       }
     } else if (userInput.keyCode === 78) {
       if (racerTwoPosition <= cssWidth - (width - cssWidth)) {
@@ -31,7 +40,17 @@ $(document).ready(function () {
         console.log('racer 1 is ', racerTwo)
         racerTwo.css({left: racerTwoPosition})
       } else {
-        console.log('Game Over')
+        if (firstPlace === null) {
+          firstPlace = 'Player Two'
+          $('.results').append('<p>Player One Finished First and Lost!<p>')
+          racerTwo.off
+        } else if (secondPlace === null && firstPlace !== 'Player Two') {
+          secondPlace = 'Player Two'
+          $('.results').append('<p>Player Two Finished Second and Won!<p>')
+        } else if (firstPlace && secondPlace !== null) {
+          gameOver = true
+          $('.results').append(`<p>Game has ended</p>`)
+        }
       }
     } else if (userInput.keyCode === 39) {
       if (racerThreePosition <= cssWidth - (width - cssWidth)) {
@@ -39,8 +58,27 @@ $(document).ready(function () {
         console.log('racer 1 is ', racerThree)
         racerThree.css({left: racerThreePosition})
       } else {
-        console.log('Game Over')
+        if (firstPlace === null) {
+          firstPlace = 'Player Three'
+          $('.results').append('<p>Player Three Finished First and Lost!<p>')
+          racerThree.off
+        } else if (secondPlace === null && firstPlace !== 'Player Three') {
+          secondPlace = 'Player Three'
+          $('.results').append('<p>Player Three Finished Second and Won!<p>')
+        } else if (firstPlace && secondPlace !== null) {
+          gameOver = true
+          $('.results').append(`<p>Game has ended</p>`)
+        }
       }
     }
   })
 })
+// function (playerName) {
+// if (firstPlace === null) {
+//   firstPlace = 'Player One'
+//   $('.results').append('<p>Player One Finished First and Lost!<p>')
+//   racerOne.off
+// } else if (secondPlace === null && firstPlace !== 'Player One') {
+//   secondPlace = 'Player One'
+//   $('.results').append('<p>Player One Finished Second and Won!<p>')
+// }
