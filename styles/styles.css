@@ -2,15 +2,15 @@ header {
   height: 100%;
 }
 
-.gameName {
-  height: 100%;
-  border: 2px solid red;
-}
-
 h1, .instructions {
   font-family: 'Fresca', sans-serif;
   font-size: 500%;
   text-align: center;
+}
+
+.gameName {
+  height: 100%;
+  border: 2px solid red;
 }
 
 .instructions {
@@ -27,7 +27,7 @@ h1, .instructions {
   width: 2px;
   border: 2px solid red;
   float: left;
-  position:relative;
+  position: relative;
   left: -10px;
   z-index: 1
 }
@@ -71,6 +71,8 @@ h1, .instructions {
   font-size: 20px;
   font-family: 'Fresca', sans-serif;
   text-align: center;
+  border:1px solid black;
+  height:315px;
 }
 
 #winner {

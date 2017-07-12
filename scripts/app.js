@@ -16,7 +16,7 @@ $(document).ready(function () {
   var width = $(window).width()
   var cssWidth = $('.track').width()
 
-  //chaser auto run
+//chaser auto run
 $(document).keydown(function(userInput) {
       // user input function
       if (userInput.keyCode === 32) {
@@ -30,10 +30,11 @@ $(document).keydown(function(userInput) {
           } else {
             autoChasing.off
           }
-        }, 2000)
+        }, 1850)
       }
     })
 
+  //players function
   $(document).keydown(function (userInput) {
     // user input function
     if (userInput.keyCode === 90) {
