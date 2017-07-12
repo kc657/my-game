@@ -28,7 +28,7 @@ h1, .instructions {
   border: 2px solid red;
   float: left;
   position:relative;
-  left: 20px;
+  left: -10px;
   z-index: 1
 }
 
@@ -46,7 +46,7 @@ h1, .instructions {
   width: 32px;
   align-items: center;
   position: absolute;
-  left: 0px;
+  left: 20px;
 }
 
 .racerTwo {
@@ -55,7 +55,7 @@ h1, .instructions {
   width: 32px;
   align-items: center;
   position: absolute;
-  left: 0px;
+  left: 20px;
 }
 
 .racerThree {
@@ -64,7 +64,7 @@ h1, .instructions {
   width: 32px;
   align-items: center;
   position: absolute;
-  left: 0px;
+  left: 20px;
 }
 
 .results {

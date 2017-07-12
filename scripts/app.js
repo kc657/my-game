@@ -1,8 +1,7 @@
 console.log('sanity check')
 
 $(document).ready(function () {
-
-  //defining variables
+  // defining variables
   var firstPlace = null
   var secondPlace = null
   var gameOver = false
@@ -17,17 +16,26 @@ $(document).ready(function () {
   var width = $(window).width()
   var cssWidth = $('.track').width()
 
-  function autoChasing(){
-    for (i=chaserPosition; i < cssWidth; i++) {
-        chaser.css({left: chaserPosition})
+  //chaser auto run
+$(document).keydown(function(userInput) {
+      // user input function
+      if (userInput.keyCode === 32) {
+        setInterval(function autoChasing() {
+          if (chaserPosition <= cssWidth - (width - cssWidth)) {
+            chaserPosition += 150
+            chaser.css({
+              left: chaserPosition
+            })
+            console.log('hello ' + chaserPosition)
+          } else {
+            autoChasing.off
+          }
+        }, 2000)
       }
-    }
-
-    autoChasing()
+    })
 
   $(document).keydown(function (userInput) {
-
-    //user input function
+    // user input function
     if (userInput.keyCode === 90) {
       if (racerOnePosition <= cssWidth - (width - cssWidth)) {
         racerOnePosition += cssWidth / 25
